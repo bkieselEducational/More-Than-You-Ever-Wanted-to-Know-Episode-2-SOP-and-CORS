@@ -26,7 +26,23 @@ Access-Control-Max-Age: Specifies how long the results of a preflight request ca
 
 By the proper usage of the above headers, we can instruct the browser to allow access to the resources we desire and continue to block access to everything else!! Ensuring a certain level of security for our application.</br>
 </br>
-Another aspect of CORS that deserves a mention here is the Pre-Flight request. This is a special HTTP request that employs the OPTIONS method and is sent to a Cross-Origin server by the browser BEFORE sending the actual request to the Cross-Origin server. This allows the browser to get a response WITHOUT a body from the server that will convey the server's CORS configuration. Based on this special response, the browser can decide to commence with the sending of the request OR if the policy states that the browser would be blocking access to the response body anyway, the request is simply never sent in the first place! This can actually be QUITE beneficial for security as certain CSRF requests may not even get sent in the first place!! While there are ways to subvert the sending of a Pre-Flight OPTIONS request, it is a great default mechanism for SOP and CORS to employ!
+Another aspect of CORS that deserves a mention here is the Pre-Flight request. This is a special HTTP request that employs the OPTIONS method and is sent to a Cross-Origin server by the browser BEFORE sending the actual request to the Cross-Origin server. This allows the browser to get a response WITHOUT a body from the server that will convey the server's CORS configuration. Based on this special response, the browser can decide to commence with the sending of the request OR if the policy states that the browser would be blocking access to the response body anyway, the request is simply never sent in the first place! This can actually be QUITE beneficial for security as certain CSRF requests may not even get sent in the first place!! While there are ways to subvert the sending of a Pre-Flight OPTIONS request, it is a great default mechanism for SOP and CORS to employ!</br>
+</br>
+## Example Pre-Flight Request / Response Cycle
+
+REQUEST:
+OPTIONS /api/data HTTP/1.1
+Host: mobmingle.com
+Origin: https://mobmingle.com
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: Content-Type, Authorization
+
+RESPONSE:
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: https://mobmingle.com
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type, Authorization
+Access-Control-Max-Age: 86400
 
 # The OSI / Network Stack
 As I mentioned this above, I wanted to also provide a visual aid in the hopes of making this more clear!
