@@ -31,18 +31,22 @@ Another aspect of CORS that deserves a mention here is the Pre-Flight request. T
 ## Example Pre-Flight Request / Response Cycle
 
 REQUEST:
+```
 OPTIONS /api/data HTTP/1.1
 Host: mobmingle.com
 Origin: https://mobmingle.com
 Access-Control-Request-Method: POST
 Access-Control-Request-Headers: Content-Type, Authorization
+```
 
 RESPONSE:
+```
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: https://mobmingle.com
 Access-Control-Allow-Methods: POST, GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type, Authorization
 Access-Control-Max-Age: 86400
+```
 
 # The OSI / Network Stack
 As I mentioned this above, I wanted to also provide a visual aid in the hopes of making this more clear!
