@@ -49,5 +49,6 @@ Access-Control-Max-Age: 86400
 ```
 
 # The OSI / Network Stack
-As I mentioned this above, I wanted to also provide a visual aid in the hopes of making this more clear!
-<img width="634" alt="network_stack" src="https://github.com/bkieselEducational/More-Than-You-Ever-Wanted-to-Know-Episode-2-SOP-and-CORS/assets/131717897/dcf1c510-45ec-48ce-a6e0-b63a18a600ae">
+As I mentioned this above, here's a visual aid in the hopes of making this more clear!
+<img width="1548" alt="osi_abstraction_map" src="https://github.com/bkieselEducational/More-Than-You-Ever-Wanted-to-Know-Episode-2-SOP-and-CORS/assets/131717897/9397944a-6d83-4afb-852d-e2c1bd112984">
+
